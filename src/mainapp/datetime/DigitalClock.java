@@ -1,7 +1,5 @@
 package mainapp.datetime;
 
-import mainapp.multithreading.ThreadNaming;
-
 import javax.swing.*;
 import java.awt.*;
 import java.time.LocalTime;
@@ -10,13 +8,14 @@ import java.time.format.DateTimeFormatter;
 public class DigitalClock extends JFrame implements Runnable {
     private JTextField txtClock;
     public DigitalClock(){
-        txtClock=new JTextField(15);
-
-        setLayout(new FlowLayout());
-        setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+        txtClock=new JTextField(6);
+        txtClock.setFont(new Font("Arial",Font.BOLD,28));
+        txtClock.setHorizontalAlignment(JTextField.CENTER);
+        txtClock.setEditable(false);
         add(txtClock);
+        setLayout(new FlowLayout());
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setVisible(true);
         pack();
 
     }
